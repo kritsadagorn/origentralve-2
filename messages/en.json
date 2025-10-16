@@ -1,0 +1,309 @@
+{
+  "nav": {
+    "programs": "Programs",
+    "blog": "Blog",
+    "cases": "Case Studies",
+    "about": "About Us",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "topbar": {
+    "serviceCenter": "Customer Service",
+    "hours": "Open daily 07:00–22:00"
+  },
+  "hero": {
+    "h1": "Origen Travel Co., Ltd.",
+    "h2": "International Tours",
+    "h3": "Best Deals, Worldwide",
+    "p": "Safe and reliable trips throughout your journey"
+  },
+  "valueProps": {
+    "heading": "Why organizations trust Origen Travel",
+    "items": [
+      { "title": "Quality", "desc": "We source quality tours to ensure confidence on every trip" },
+      { "title": "Trusted", "desc": ">15 years of experience in travel" },
+      { "title": "Comprehensive", "desc": "End-to-end services for every trip—your journey is our work" },
+      { "title": "Special Deals", "desc": "Best-value deals on flights and tours, updated daily" }
+    ]
+  },
+  "showcase": {
+    "heading": "What we've delivered for partners & organizations",
+    "subheading": "Selected B2B programs: corporate learning, study tours, cultural exchange and wellness",
+    "b2bPrograms": "Tailor-made B2B Programs",
+    "b2bProgramsDesc": "Designed end-to-end to meet organizational goals",
+    "studyTours": "Study Tours",
+    "studyToursDesc": "On-site learning for institutions and teams",
+    "govVisits": "Government Visits",
+    "govVisitsDesc": "Delegations and knowledge exchange with agencies",
+    "cultureExchange": "Culture Exchange",
+    "cultureExchangeDesc": "Cross-cultural experiences for organizations",
+    "wellnessTrips": "Wellness Trips",
+    "wellnessTripsDesc": "Health-focused journeys that build team resilience"
+  },
+  "testimonials": {
+    "eyebrow": "What our clients say",
+    "heading": "Trusted by travelers and partners",
+    "highlight": "“Origen made our incentive trip smooth from end to end.”",
+    "items": [
+      {
+        "name": "Suphachai K.",
+        "url": "https://example.com",
+        "quote": "Their attention to detail and local insight were outstanding."
+      },
+      {
+        "name": "Ananya P.",
+        "url": "https://example.com",
+        "quote": "Our team felt taken care of at every step—fantastic service."
+      },
+      {
+        "name": "Michael L.",
+        "url": "https://example.com",
+        "quote": "Reliable, creative, and always on time. Highly recommended."
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Contact Details",
+    "address": "Address",
+    "office": "Office",
+    "hours": "Hours",
+    "hotline": "Hotline",
+    "formTitle": "Contact Us Form",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "message": "Message Details",
+    "submit": "Send Message"
+  }
+  ,
+  "contactPage": {
+    "heading": "Contact Us",
+    "intro": "Send us a message and our team will get back to you shortly.",
+    "name": "Full Name",
+    "org": "Organization",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "submit": "Send Message",
+    "successTitle": "Message sent",
+    "successDesc": "Thanks for reaching out. We’ll get back to you soon.",
+    "companySection": {
+      "title": "Company Information",
+      "addressLabel": "Address",
+      "hoursLabel": "Hours",
+      "hotlineLabel": "Hotline",
+      "officeLabel": "Office",
+      "line": {
+        "title": "Add us on LINE",
+        "scan": "Scan the QR code or tap the button to connect",
+        "lineId": "LINE ID: @origintravel",
+        "addButton": "Add LINE",
+        "link": "https://line.me/R/ti/p/@origintravel"
+      }
+    }
+  },
+  "footer": {
+    "company": {
+      "name": "Origen Travel Co., Ltd.",
+      "address": "199/349 Rama IV Rd, Thung Maha Mek, Sathon, Bangkok 12000"
+    },
+    "hours": {
+      "monFri": "Mon–Fri 07:00–22:00",
+      "sat": "Sat 09:00–16:00"
+    },
+    "license": {
+      "title": "Tourism Business License",
+      "number": "License TAT 11/12540"
+    },
+    "packagesTitle": "All Tour Packages",
+    "packages": [
+      ["Chiang Mai Tours", "Korea Tours", "Taiwan Tours"],
+      ["Chonburi Tours", "Vietnam Tours", "Phuket Tours"],
+      ["Japan Tours", "UK Tours", "Australia Tours"]
+    ]
+  }
+  ,
+  "about": {
+    "vision": { "title": "Vision", "desc": "We craft meaningful, sustainable journeys that grow people and organizations." },
+    "mission": { "title": "Mission", "items": [
+      "Design programs tailored to client goals",
+      "Elevate safety and quality standards",
+      "Enable learning through travel",
+      "Partner with trusted experts"
+    ]},
+    "story": {
+      "title": "Our Company Story",
+      "desc": "From a small agency to a trusted partner for organizations worldwide.",
+      "milestones": [
+        { "year": "2014", "text": "Founded and launched small-group outbound tours" },
+        { "year": "2017", "text": "Expanded to Study Tours and Government Visits" },
+        { "year": "2020", "text": "Raised our bar on service quality and safety" },
+        { "year": "2024", "text": "Built end-to-end B2B solutions for organizations" }
+      ]
+    },
+    "team": {
+      "title": "Our Team",
+      "desc": "Professionals across travel operations and organizational development",
+      "members": [
+        { "name": "Natee Sukjai", "role": "Managing Director", "img": "/images/placeholder600x400.svg" },
+        { "name": "Orathai Mongkol", "role": "B2B Program Lead", "img": "/images/placeholder600x400.svg" },
+        { "name": "Sirichai Wat", "role": "Operation Manager", "img": "/images/placeholder600x400.svg" },
+        { "name": "Thanyaporn Srisuk", "role": "Travel Specialist", "img": "/images/placeholder600x400.svg" }
+      ]
+    },
+    "certsTitle": "Certifications & Partners",
+    "certs": [
+      { "img": "/images/contact-office.svg", "alt": "Seal 1" },
+      { "img": "/images/contact-clock.svg", "alt": "Seal 2" },
+      { "img": "/images/contact-location.svg", "alt": "Seal 3" }
+    ]
+  }
+  ,
+  "caseStudies": {
+    "heading": "Case Studies / Success Stories",
+    "intro": "A few recent stories showing how we design and deliver programs that create real outcomes for teams and organizations.",
+    "items": [
+      {
+        "client": "Acme Manufacturing (APAC)",
+        "role": "Operations & People Development",
+        "imageAlt": "Team learning journey in Japan",
+        "quote": "Origen handled complex logistics across multiple cities and kept everyone engaged. Our leaders came back aligned and inspired.",
+        "results": [
+          "96% participant satisfaction",
+          "18% budget saved vs. prior vendor",
+          "3 concrete process improvements adopted"
+        ]
+      },
+      {
+        "client": "Bangkok University",
+        "role": "International Program Office",
+        "imageAlt": "Students on an overseas study tour",
+        "quote": "The program balanced academic depth and cultural exposure perfectly. Student feedback was overwhelmingly positive.",
+        "results": [
+          "4 partner MoUs initiated",
+          "Zero travel incidents",
+          "NPS +72 from students"
+        ]
+      },
+      {
+        "client": "Department of Digital Government",
+        "role": "Delegation & Knowledge Exchange",
+        "imageAlt": "Delegation visiting a government agency",
+        "quote": "Well-curated site visits and expert sessions. We gained practical insights we can apply right away.",
+        "results": [
+          "5 actionable best practices collected",
+          "Cross-agency working group formed",
+          "Roadmap draft completed in 2 weeks"
+        ]
+      }
+    ]
+  }
+  ,
+  "programsPage": {
+    "heading": "Programs & Services",
+    "intro": "Signature offerings designed to meet organizational goals with creativity and precision.",
+    "labels": {
+      "highlights": "Highlights",
+      "duration": "Typical Duration",
+      "bestFor": "Best For",
+      "destinations": "Destinations",
+      "more": "More details",
+      "less": "Hide details"
+    },
+    "items": [
+      {
+        "key": "studyTours",
+        "title": "Study Tours",
+        "desc": "On-site learning journeys for schools, universities and teams.",
+        "duration": "5–10 days",
+        "bestFor": "Universities, schools, corporate L&D",
+        "destinations": "Japan, Korea, Taiwan, Vietnam",
+        "highlights": [
+          "Curated site visits with expert hosts",
+          "Pre/Post learning activities",
+          "Risk-managed logistics end to end"
+        ]
+      },
+      {
+        "key": "govVisits",
+        "title": "Government Visits",
+        "desc": "Delegations and knowledge exchange with public agencies.",
+        "duration": "3–7 days",
+        "bestFor": "Government agencies, state enterprises",
+        "destinations": "Singapore, Japan, UK",
+        "highlights": [
+          "High-impact agenda design",
+          "Matchmaking with relevant agencies",
+          "Cultural protocol guidance"
+        ]
+      },
+      {
+        "key": "workshops",
+        "title": "Corporate Workshops",
+        "desc": "Facilitated sessions that build capability and alignment.",
+        "duration": "Half-day to 2 days",
+        "bestFor": "Executives, managers, project teams",
+        "destinations": "On-site or destination-based",
+        "highlights": [
+          "Certified facilitators",
+          "Tailored frameworks & tools",
+          "Actionable outcomes"
+        ]
+      },
+      {
+        "key": "wellnessCulture",
+        "title": "Wellness & Culture Trips",
+        "desc": "Mindful travel experiences that strengthen team resilience.",
+        "duration": "3–6 days",
+        "bestFor": "Teams, HR & People Ops",
+        "destinations": "Chiang Mai, Kyoto, Bali",
+        "highlights": [
+          "Wellness-first itineraries",
+          "Local culture immersion",
+          "Experienced well-being guides"
+        ]
+      }
+    ]
+  }
+  ,
+  "blogPage": {
+    "heading": "Blog / Insights",
+    "intro": "Perspectives on travel trends, educational journeys, and corporate learning.",
+    "labels": { "all": "All", "trends": "Trends", "edu": "Educational Travel", "corp": "Corporate Learning", "read": "min read" },
+    "posts": [
+      {
+        "title": "5 Travel Trends Organizations Should Watch",
+        "excerpt": "From wellness-first to micro-learning journeys—how travel is evolving for teams.",
+        "category": "trends",
+        "date": "2025-09-12",
+        "readTime": 6,
+        "imageAlt": "Abstract travel trend graphic"
+      },
+      {
+        "title": "Designing Effective Study Tours",
+        "excerpt": "A step-by-step approach to turn field visits into meaningful learning.",
+        "category": "edu",
+        "date": "2025-08-22",
+        "readTime": 7,
+        "imageAlt": "Students visiting a museum"
+      },
+      {
+        "title": "Corporate Learning That Sticks",
+        "excerpt": "Blending workshops and on-site experiences for lasting impact.",
+        "category": "corp",
+        "date": "2025-07-05",
+        "readTime": 5,
+        "imageAlt": "Colleagues in a workshop"
+      },
+      {
+        "title": "Wellness Travel for Teams",
+        "excerpt": "Why mindfulness and culture immersion matter to performance.",
+        "category": "trends",
+        "date": "2025-06-19",
+        "readTime": 4,
+        "imageAlt": "Calm wellness landscape"
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+:root {
+  /* Inter first for Latin; Thai glyphs will fall back to Prompt automatically */
+  --font-ui: var(--font-inter), var(--font-prompt), system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-ui);
+}
+
+/* Utility helpers for brand gradients (no need to edit Tailwind config) */
+.brand-topbar {
+  background-image: linear-gradient(90deg, var(--brand-purple), var(--brand-magenta), var(--brand-pink));
+}
+
+/* Animated background helpers */
+@keyframes float-slow {
+  0% { transform: translateY(0) translateX(0) scale(1); }
+  50% { transform: translateY(-6px) translateX(4px) scale(1.02); }
+  100% { transform: translateY(0) translateX(0) scale(1); }
+}
+@keyframes slow-pan {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.bg-grid-soft {
+  background-image: linear-gradient(to right, rgba(0,0,0,0.04) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0,0,0,0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.bg-dots-soft {
+  background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,0.05) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+.blob {
+  animation: float-slow 14s ease-in-out infinite;
+}
+.shine {
+  mask-image: radial-gradient(circle at var(--x,50%) var(--y,50%), rgba(0,0,0,0.9), transparent 60%);
+}
