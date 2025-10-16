@@ -1,12 +1,7 @@
-import PageBackground from "../components/decor/PageBackground";
-import Hero from "../components/home/Hero";
-import ValueProps from "../components/home/ValueProps";
+import { redirect } from "next/navigation";
+import { defaultLocale } from "../i18n/config";
 
+// Redirect root path to the default locale (handled by [locale] segment)
 export default function Home() {
-  return (
-    <PageBackground variant="home">
-      <Hero />
-      <ValueProps />
-    </PageBackground>
-  );
+  redirect(`/${defaultLocale}`);
 }
