@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   description:
     "Origen Travel — ผู้เชี่ยวชาญทริปดูงาน, การศึกษา, แลกเปลี่ยนวัฒนธรรม และทริปเพื่อสุขภาพสำหรับองค์กร หน่วยงานรัฐ และสถาบันการศึกษา",
-  metadataBase: new URL("https://www.example.com"),
+  // metadataBase: new URL("https://www.example.com"),
   alternates: { canonical: "/" },
   openGraph: {
     siteName: "Origen Travel",
@@ -58,6 +58,22 @@ export const metadata: Metadata = {
     title: "Origen Travel",
     description:
       "ผู้เชี่ยวชาญทริปดูงาน, การศึกษา, แลกเปลี่ยนวัฒนธรรม และทริปเพื่อสุขภาพสำหรับองค์กร",
+    images: [
+      {
+        url: "https://img5.pic.in.th/file/secure-sv1/origenmetadata.png",
+        alt: "Origen Travel",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@origen_travel",
+    creator: "@origen_travel",
+    images: ["https://img5.pic.in.th/file/secure-sv1/origenmetadata.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import PageBackground from "@/components/decor/PageBackground";
 import CaseStudyCard, { type CaseStudyItem } from "@/components/case-studies/CaseStudyCard";
@@ -27,3 +28,24 @@ export default function CaseStudiesPage() {
     </PageBackground>
   );
 }
+
+export const metadata: Metadata = {
+  title: "ประสบการณ์จากลูกค้า | ผลลัพธ์ทริปองค์กร & Study Tour",
+  description:
+    "เจาะลึกเคสจริงจากองค์กรและสถาบันที่ร่วมเดินทางกับ Origen Travel เห็นผลลัพธ์ที่จับต้องได้ ทั้งการเรียนรู้และความร่วมมือ",
+  keywords: [
+    "Case Studies",
+    "ทริปองค์กร",
+    "Study Tour",
+    "ผลลัพธ์",
+    "ญี่ปุ่น",
+    "เอเชีย",
+  ],
+  openGraph: {
+    title: "Case Studies | Origen Travel",
+    description:
+      "สรุปผลลัพธ์จากทริปและมูลค่าที่องค์กรได้รับ จากการเดินทางเชิงการเรียนรู้",
+    images: [{ url: "https://img5.pic.in.th/file/secure-sv1/origenmetadata.png" }],
+  },
+  twitter: { card: "summary_large_image", images: ["https://img5.pic.in.th/file/secure-sv1/origenmetadata.png"] },
+};

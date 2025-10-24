@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import PageBackground from "@/components/decor/PageBackground";
 import ProgramsHero from "@/components/programs/ProgramsHero";
@@ -17,3 +18,24 @@ export default function ProgramsPage() {
     </PageBackground>
   );
 }
+
+export const metadata: Metadata = {
+  title: "โปรแกรมทริปสำหรับองค์กร & สถาบัน | Study • Culture • Wellness",
+  description:
+    "สำรวจโปรแกรมทริปยอดนิยมของ Origen Travel สำหรับองค์กรและสถาบัน ทั้ง Study Tour, แลกเปลี่ยนวัฒนธรรม และทริปเพื่อสุขภาพ ในเอเชียและญี่ปุ่น",
+  keywords: [
+    "โปรแกรมทริปองค์กร",
+    "Study Tour",
+    "Culture Exchange",
+    "Wellness Travel",
+    "ญี่ปุ่น",
+    "เอเชีย",
+  ],
+  openGraph: {
+    title: "โปรแกรมทริป Origen Travel",
+    description:
+      "คัดสรรหัวข้อและปลายทางที่ใช่ ให้ได้ผลลัพธ์การเรียนรู้และความร่วมมือ",
+    images: [{ url: "https://img5.pic.in.th/file/secure-sv1/origenmetadata.png" }],
+  },
+  twitter: { card: "summary_large_image", images: ["https://img5.pic.in.th/file/secure-sv1/origenmetadata.png"] },
+};

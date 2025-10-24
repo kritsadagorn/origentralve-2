@@ -15,7 +15,6 @@ export default function VisionMission() {
   useGSAP(
     () => {
       const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
-      // Intro: fade background accents and sticky card
       tl.from("[data-accent]", { opacity: 0, y: 20, duration: 0.6 });
       tl.from("[data-vision-card]", { opacity: 0, y: 24, duration: 0.6 }, "<+0.1");
       tl.from("[data-underline]", { scaleX: 0, transformOrigin: "0% 50%", duration: 0.7 }, "<");
@@ -40,7 +39,7 @@ export default function VisionMission() {
         });
       });
 
-      // Mission cards stagger on scroll with alternating offsets
+      // Mission cards stagger
       gsap.from("[data-mission-grid] [data-card]", {
         y: (i: number) => (i % 2 === 0 ? 26 : 40),
         rotate: (i: number) => (i % 2 === 0 ? -0.5 : 0.5),
@@ -51,14 +50,12 @@ export default function VisionMission() {
         scrollTrigger: { trigger: "[data-mission-grid]", start: "top 80%" },
       });
 
-      // Hover shine + badge micro interaction per card (robust reset)
       const removeListeners: Array<() => void> = [];
       gsap.utils.toArray<HTMLElement>("[data-mission-grid] [data-card]").forEach((card) => {
         const shine = card.querySelector<HTMLElement>("[data-shine]");
         const badge = card.querySelector<HTMLElement>("[data-badge]");
         const underline = card.querySelector<HTMLElement>("[data-underline2]");
         if (!shine || !badge || !underline) return;
-        // Use transform scaleX for underline to avoid width race conditions
         gsap.set(underline, { scaleX: 0, transformOrigin: "0% 50%" });
         const onEnter = () => {
           gsap.killTweensOf([shine, badge, underline]);
@@ -85,7 +82,6 @@ export default function VisionMission() {
           card.removeEventListener("touchend", onLeave);
         });
       });
-      // Ensure we cleanup DOM listeners as well
       return () => {
         removeListeners.forEach((fn) => fn());
       };

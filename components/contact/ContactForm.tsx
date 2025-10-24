@@ -27,7 +27,7 @@ export default function ContactForm() {
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("submitting");
-    setTimeout(() => setStatus("success"), 900); // fake success for now
+    setTimeout(() => setStatus("success"), 900);
   }
 
   return (

@@ -13,64 +13,124 @@ export default function TeamCerts() {
   const t = useTranslations("about");
   const ref = useRef<HTMLDivElement | null>(null);
 
-  useGSAP(() => {
-    const ctx = gsap.context(() => {
-      gsap.from("[data-team] [data-card]", {
-        y: 24,
-        opacity: 0,
-        stagger: 0.08,
-        duration: 0.5,
-        ease: "power2.out",
-        scrollTrigger: { trigger: "[data-team]", start: "top 80%" },
-      });
-      gsap.from("[data-certs] img", {
-        y: 16,
-        opacity: 0,
-        stagger: 0.06,
-        duration: 0.45,
-        ease: "power2.out",
-        scrollTrigger: { trigger: "[data-certs]", start: "top 85%" },
-      });
-    }, ref);
-    return () => ctx.revert();
-  }, { scope: ref });
+  useGSAP(
+    () => {
+      const ctx = gsap.context(() => {
+        gsap.from("[data-ceo-left] > *", {
+          y: 16,
+          opacity: 0,
+          stagger: 0.08,
+          duration: 0.5,
+          ease: "power2.out",
+          scrollTrigger: { trigger: "[data-ceo]", start: "top 80%" },
+        });
+        gsap.from("[data-ceo-img]", {
+          x: 24,
+          opacity: 0,
+          duration: 0.6,
+          ease: "power2.out",
+          scrollTrigger: { trigger: "[data-ceo]", start: "top 80%" },
+        });
+      }, ref);
+      return () => ctx.revert();
+    },
+    { scope: ref }
+  );
 
-  const people = t.raw("team.members") as { name: string; role: string; img: string }[];
-  const certs = t.raw("certs") as { img: string; alt: string }[];
+  const ceoRaw = (t.raw("ceo") as any) || {};
+  const ceo = {
+    title: (ceoRaw.title as string) ?? t("ceo.title"),
+    highlight: (ceoRaw.highlight as string) ?? "",
+    quote: (ceoRaw.quote as string) ?? "",
+    name: (ceoRaw.name as string) ?? "",
+    position: (ceoRaw.position as string) ?? "",
+    date: (ceoRaw.date as string) ?? "",
+    paragraphs: (ceoRaw.paragraphs as string[]) ?? [],
+    badges: (ceoRaw.badges as string[]) ?? [],
+    photo: (ceoRaw.photo as string) || "/images/placeholder600x400.svg",
+    photoAlt: (ceoRaw.photoAlt as string) || (ceoRaw.title as string) || "CEO",
+  };
 
   return (
-    <section ref={ref} className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 overflow-hidden">
+    <section
+      ref={ref}
+      className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 overflow-hidden"
+    >
       <div aria-hidden className="pointer-events-none absolute inset-0 z-0">
         <div className="absolute inset-0 opacity-[0.28] [background-image:repeating-linear-gradient(135deg,rgba(123,31,162,0.10)_0px,rgba(123,31,162,0.10)_2px,transparent_2px,transparent_12px)]" />
         <div className="absolute inset-0 opacity-[0.35] bg-dots-soft" />
         <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#7B1FA2]/10 to-transparent" />
       </div>
-      <div className="relative z-10">
-      <div className="mb-8 text-center">
-        <h2 className="text-2xl font-semibold text-gray-900 sm:text-3xl">{t("team.title")}</h2>
-        <p className="mt-2 text-gray-600">{t("team.desc")}</p>
-      </div>
 
-      <div data-team className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
-        {people.map((p, i) => (
-          <div key={i} data-card className="rounded-2xl border border-gray-100 bg-white p-3 shadow-sm">
-            <div className="relative mb-2 aspect-[4/5] w-full overflow-hidden rounded-xl">
-              <Image src={p.img} alt={p.name} fill className="object-cover" />
+      <div data-ceo className="relative z-10 grid gap-8 md:grid-cols-2 md:items-center">
+        {/* Left: Text */}
+        <div data-ceo-left>
+          {ceo.title && (
+            <h2 className="text-2xl font-semibold text-gray-900 sm:text-3xl">
+              {ceo.title}
+            </h2>
+          )}
+
+          {ceo.highlight && (
+            <p className="mt-3 text-lg font-medium text-[#7B1FA2]">
+              {ceo.highlight}
+            </p>
+          )}
+
+          {ceo.quote && (
+            <blockquote className="mt-4 rounded-xl border border-violet-100 bg-violet-50/60 p-4 text-violet-900">
+              <span className="mr-2 text-violet-500">“</span>
+              {ceo.quote}
+              <span className="ml-1 text-violet-500">”</span>
+            </blockquote>
+          )}
+
+          {ceo.paragraphs?.length > 0 && (
+            <div className="mt-4 space-y-3 text-gray-700">
+              {ceo.paragraphs.map((p, i) => (
+                <p key={i}>{p}</p>
+              ))}
             </div>
-            <div className="text-sm font-semibold text-gray-900">{p.name}</div>
-            <div className="text-xs text-gray-600">{p.role}</div>
-          </div>
-        ))}
-      </div>
+          )}
 
-  <div className="mt-10">
-        <div className="mb-4 text-center text-sm font-semibold text-gray-900">{t("certsTitle")}</div>
-        <div data-certs className="flex flex-wrap items-center justify-center gap-6 opacity-90 mb-8">
-          {certs.map((c, i) => (
-            <Image key={i} src={c.img} alt={c.alt} width={80} height={80} />
-          ))}
+          {(ceo.name || ceo.position) && (
+            <div className="mt-5 flex flex-col gap-1 text-sm">
+              <div className="font-semibold text-gray-900">
+                {[ceo.name, ceo.position].filter(Boolean).join(" — ")}
+              </div>
+              {ceo.date && (
+                <div className="text-gray-500">{ceo.date}</div>
+              )}
+            </div>
+          )}
+
+          {/* {ceo.badges?.length > 0 && (
+            <div className="mt-4 flex flex-wrap gap-2">
+              {ceo.badges.map((b, i) => (
+                <span
+                  key={i}
+                  className="rounded-full border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-700 shadow-sm"
+                >
+                  {b}
+                </span>
+              ))}
+            </div>
+          )} */}
         </div>
-      </div>
+
+        {/* Right: Image */}
+        <div className="relative mx-auto w-full max-w-md md:max-w-none" data-ceo-img>
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-md">
+            <Image
+              src={ceo.photo}
+              alt={ceo.photoAlt}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+              priority
+            />
+          </div>
+        </div>
       </div>
     </section>
   );

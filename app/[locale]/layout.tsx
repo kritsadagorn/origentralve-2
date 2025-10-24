@@ -9,8 +9,6 @@ import { getMessages } from "next-intl/server";
 import LocaleHtmlUpdater from "../../components/i18n/LocaleHtmlUpdater";
 import Footer from "../../components/footer/Footer";
 
-// Fonts are applied in root layout's body; no need to include here
-
 export const metadata: Metadata = {
   title: {
     default: "Origen Travel | Corporate, Study, Culture & Wellness Programs",
@@ -18,6 +16,21 @@ export const metadata: Metadata = {
   },
   description:
     "Origen Travel — ผู้เชี่ยวชาญทริปดูงาน, การศึกษา, แลกเปลี่ยนวัฒนธรรม และทริปเพื่อสุขภาพสำหรับองค์กร หน่วยงานรัฐ และสถาบันการศึกษา",
+  openGraph: {
+    siteName: "Origen Travel",
+    type: "website",
+    locale: "th_TH",
+    images: [
+      {
+        url: "https://img5.pic.in.th/file/secure-sv1/origenmetadata.png",
+        alt: "Origen Travel",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://img5.pic.in.th/file/secure-sv1/origenmetadata.png"],
+  },
 };
 
 export function generateStaticParams() {
