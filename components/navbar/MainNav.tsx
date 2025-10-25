@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NavLink from "./NavLink";
 import MobileMenu from "./MobileMenu";
 import { useTranslations } from "next-intl";
@@ -27,6 +27,11 @@ export default function MainNav() {
   const router = useRouter();
   const locale = pathname?.split("/")[1] || "th";
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
   function switchLocale(next: "th" | "en") {
     if (!pathname) return;
     const segs = pathname.split("/");
@@ -42,7 +47,11 @@ export default function MainNav() {
         <div className="flex items-center justify-between">
           {/* Left: Logo */}
           <div className="flex items-center py-3">
-            <Link href={`/${locale}`} className="inline-flex items-center" aria-label="Origen Travel homepage">
+            <Link
+              href={`/${locale}`}
+              className="inline-flex items-center"
+              aria-label="Origen Travel homepage"
+            >
               <Image
                 src="/images/logo.svg"
                 alt="Origen Travel"
@@ -65,20 +74,32 @@ export default function MainNav() {
             </ul>
 
             {/* Mobile menu button */}
-            <button
-              className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100"
-              aria-label="Open menu"
-              onClick={() => setOpen(true)}
-            >
-              <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
 
             {/* Language selector (always shown; rightmost) */}
             <div className="">
               <LanguageSelector />
             </div>
+            <button
+              className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-gray-700 hover:bg-gray-100"
+              aria-label="Open menu"
+              aria-expanded={open}
+              aria-controls="mobile-menu-panel"
+              onClick={() => setOpen(true)}
+            >
+              <svg
+                className="h-6 w-6"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
           </div>
         </div>
       </div>
@@ -86,4 +107,3 @@ export default function MainNav() {
     </nav>
   );
 }
-

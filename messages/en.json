@@ -5,7 +5,8 @@
     "cases": "Case Studies",
     "about": "About Us",
     "contact": "Contact",
-    "language": "Language"
+    "language": "Language",
+    "menu": "Menu"
   },
   "topbar": {
     "serviceCenter": "Customer Service",
@@ -273,6 +274,7 @@
     "labels": { "all": "All", "trends": "Trends", "edu": "Educational Travel", "corp": "Corporate Learning", "read": "min read" },
     "posts": [
       {
+        "slug": "travel-trends-organizations-should-watch",
         "title": "5 Travel Trends Organizations Should Watch",
         "excerpt": "From wellness-first to micro-learning journeys—how travel is evolving for teams.",
         "category": "trends",
@@ -281,6 +283,7 @@
         "imageAlt": "Abstract travel trend graphic"
       },
       {
+        "slug": "designing-effective-study-tours",
         "title": "Designing Effective Study Tours",
         "excerpt": "A step-by-step approach to turn field visits into meaningful learning.",
         "category": "edu",
@@ -289,6 +292,7 @@
         "imageAlt": "Students visiting a museum"
       },
       {
+        "slug": "corporate-learning-that-sticks",
         "title": "Corporate Learning That Sticks",
         "excerpt": "Blending workshops and on-site experiences for lasting impact.",
         "category": "corp",
@@ -297,6 +301,7 @@
         "imageAlt": "Colleagues in a workshop"
       },
       {
+        "slug": "wellness-travel-for-teams",
         "title": "Wellness Travel for Teams",
         "excerpt": "Why mindfulness and culture immersion matter to performance.",
         "category": "trends",

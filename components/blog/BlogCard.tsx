@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -15,6 +16,7 @@ export type BlogPost = {
   date: string;
   readTime: number;
   imageAlt: string;
+  slug?: string;
 };
 
 export default function BlogCard({ post, index, readLabel }: { post: BlogPost; index: number; readLabel: string }) {
@@ -34,22 +36,39 @@ export default function BlogCard({ post, index, readLabel }: { post: BlogPost; i
     return () => ctx.revert();
   }, [index]);
 
+  const pathname = typeof window !== 'undefined' ? window.location.pathname : '';
+  const locale = pathname?.split("/")[1] || "th";
+  const href = `/${locale}/blog/${post.slug ?? slugify(post.title)}`;
+
   return (
-    <article ref={ref} className="overflow-hidden rounded-lg border border-black/10 bg-white shadow-sm">
-      <div className="relative aspect-[16/10] overflow-hidden">
-        <Image src="/images/placeholder600x400.svg" alt={post.imageAlt} fill className="object-cover transition-transform duration-500 hover:scale-[1.03]" />
-      </div>
-      <div className="p-4 sm:p-5">
-        <div className="flex items-center gap-2 text-xs text-gray-600">
-          <span className="rounded bg-gray-100 px-2 py-0.5 font-medium text-gray-800">{post.category}</span>
-          <span aria-hidden>•</span>
-          <time dateTime={post.date}>{format.dateTime(new Date(post.date), { year: "numeric", month: "numeric", day: "numeric" })}</time>
-          <span aria-hidden>•</span>
-          <span>{post.readTime} {readLabel}</span>
+    <Link href={href} className="overflow-hidden rounded-lg border border-black/10 bg-white shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#C2185B]" ref={ref as any}>
+      <article>
+        <div className="relative aspect-[16/10] overflow-hidden">
+          <Image src="/images/placeholder600x400.svg" alt={post.imageAlt} fill className="object-cover transition-transform duration-500 hover:scale-[1.03]" />
         </div>
-        <h3 className="mt-2 text-lg font-semibold text-gray-900">{post.title}</h3>
-        <p className="mt-1 text-gray-700">{post.excerpt}</p>
-      </div>
-    </article>
+        <div className="p-4 sm:p-5">
+          <div className="flex items-center gap-2 text-xs text-gray-600">
+            <span className="rounded bg-gray-100 px-2 py-0.5 font-medium text-gray-800">{post.category}</span>
+            <span aria-hidden>•</span>
+            <time dateTime={post.date}>{format.dateTime(new Date(post.date), { year: "numeric", month: "numeric", day: "numeric" })}</time>
+            <span aria-hidden>•</span>
+            <span>{post.readTime} {readLabel}</span>
+          </div>
+          <h3 className="mt-2 text-lg font-semibold text-gray-900">{post.title}</h3>
+          <p className="mt-1 text-gray-700">{post.excerpt}</p>
+        </div>
+      </article>
+    </Link>
   );
+}
+
+function slugify(input: string) {
+  return input
+    .toLowerCase()
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9\s-]/g, '')
+    .trim()
+    .replace(/[\s_-]+/g, '-')
+    .replace(/^-+|-+$/g, '');
 }

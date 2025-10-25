@@ -5,7 +5,8 @@
     "cases": "รีวิวลูกค้า",
     "about": "เกี่ยวกับเรา",
     "contact": "ติดต่อเรา",
-    "language": "ภาษา"
+    "language": "ภาษา",
+    "menu": "เมนู"
   },
   "topbar": {
     "serviceCenter": "ศูนย์บริการลูกค้า",
@@ -273,6 +274,7 @@
     "labels": { "all": "ทั้งหมด", "trends": "เทรนด์", "edu": "Educational Travel", "corp": "Corporate Learning", "read": "นาที" },
     "posts": [
       {
+        "slug": "travel-trends-organizations-should-watch",
         "title": "5 เทรนด์การท่องเที่ยวสำหรับองค์กร",
         "excerpt": "ตั้งแต่ Wellness-first ถึง Micro-learning ทริปของทีมกำลังเปลี่ยนไปอย่างไร",
         "category": "trends",
@@ -281,6 +283,7 @@
         "imageAlt": "กราฟิกเทรนด์การท่องเที่ยวยุคใหม่"
       },
       {
+        "slug": "designing-effective-study-tours",
         "title": "ออกแบบ Study Tours ให้ได้ผล",
         "excerpt": "แนวทางทีละขั้นเพื่อเปลี่ยนการเยี่ยมชมให้เป็นการเรียนรู้ที่มีความหมาย",
         "category": "edu",
@@ -289,6 +292,7 @@
         "imageAlt": "นักศึกษาเยี่ยมชมพิพิธภัณฑ์"
       },
       {
+        "slug": "corporate-learning-that-sticks",
         "title": "Corporate Learning แบบติดตัว",
         "excerpt": "ผสานเวิร์กชอปกับประสบการณ์จริง เพื่อผลลัพธ์ที่ยั่งยืน",
         "category": "corp",
@@ -297,6 +301,7 @@
         "imageAlt": "เพื่อนร่วมงานในเวิร์กชอป"
       },
       {
+        "slug": "wellness-travel-for-teams",
         "title": "Wellness Travel สำหรับทีมงาน",
         "excerpt": "ทำไมสติและวัฒนธรรมท้องถิ่นจึงสำคัญต่อประสิทธิภาพ",
         "category": "trends",

@@ -4,6 +4,8 @@ import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import LanguageSelector from "./LanguageSelector";
 import { createPortal } from "react-dom";
+import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 export default function MobileMenu({
   open,
@@ -16,6 +18,9 @@ export default function MobileMenu({
 }) {
   const panelRef = useRef<HTMLDivElement | null>(null);
   const firstLinkRef = useRef<HTMLAnchorElement | null>(null);
+  const pathname = usePathname();
+  const locale = pathname?.split("/")[1] || "th";
+  const t = useTranslations("nav");
 
   // Lock body scroll when open
   useEffect(() => {
@@ -53,12 +58,13 @@ export default function MobileMenu({
       {/* Panel */}
       <div
         ref={panelRef}
+        id="mobile-menu-panel"
         className={`absolute right-0 top-0 h-full w-72 bg-white shadow-xl transition-transform duration-300 ${open ? "translate-x-0" : "translate-x-full"}`}
         role="dialog"
         aria-label="Mobile navigation"
       >
         <div className="flex items-center justify-between border-b px-4 py-3">
-          <span className="text-base font-semibold">เมนู</span>
+          <span className="text-base font-semibold">{t("menu", { default: "Menu" })}</span>
           <button onClick={onClose} aria-label="Close menu" className="rounded p-1 hover:bg-gray-100">
             <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -69,7 +75,7 @@ export default function MobileMenu({
           {items.map((it, idx) => (
             <Link
               key={it.href}
-              href={it.href}
+              href={`/${locale}${it.href}`}
               ref={idx === 0 ? firstLinkRef : undefined}
               className={`block rounded px-3 py-2 text-[15px] font-medium transition-all ${open ? "translate-x-0 opacity-100" : "translate-x-4 opacity-0"} duration-300 text-gray-900 hover:bg-gray-50`}
               style={{ transitionDelay: open ? `${Math.min(idx * 40, 240)}ms` : "0ms" }}
